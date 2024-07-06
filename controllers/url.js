@@ -11,10 +11,12 @@ async function generateShortURL(req, res){
  await URL.create({
     shortID : shortID,
     redirectURL : body.url,
-    visitHistorty : [],
+    visitHistory : [],
 
  });
- 
+ return res.render("home",{
+    id: shortID,
+ })
  return res.json({ id : shortID});
  
 };
